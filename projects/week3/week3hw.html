@@ -1,0 +1,92 @@
+
+    <!DOCTYPE html>
+<html>
+
+    <head>
+    <title>Currency Converter: GBP to USD </title>
+    
+        <style>
+        /* Enter CSS below */
+            
+            body{
+                background-color: #e6e6e6;
+            }
+            h1{
+                font-family: "Tahoma";
+                color: #cc4782;
+            }
+        
+            p{
+                font-family: "Tahoma";
+            }
+            
+            label{
+                font-family: "Tahoma";
+            }
+            
+            button{
+                background-color: #cc4782;
+                color: white;
+                font-family: "Tahoma";
+                width: 200px;
+                font-size: 18px;
+                
+            }
+            
+            h2{
+                font-family:"Tahoma";
+            }
+        </style>
+    
+    </head>
+
+    <body>
+    <h1>Currency Converter: GBP to USD </h1>
+        
+        <img src="http://buzzghana.com/wp-content/uploads/2013/10/british-pounds-and-dollars.jpg" height=300>
+        
+    <p><i>Enter the amount of money in British Pounds below to convert into American Dollars.</i></p>
+    
+    <form>
+        <label for="gbpInput">Enter amount in British Pounds (£):</label>
+        <input type="text" name="gbpInput" id="gbpInput">
+        
+<br><br>    
+        <button type="button" name="gbpButton" id="gButton">Convert!</button>
+    </form>
+        
+    <div id="output"></div>
+        
+        <script>
+        /* Comment: Enter code below */    
+        
+   function gbpConverter(){
+            var gbpAmount = document.getElementById("gbpInput").value; 
+            console.log("GBP amount" + gbpAmount); 
+            
+            var usdAmount = parseInt(gbpAmount) * 1.32;
+            console.log(usdAmount);
+            gbpAmount = Math.round(usdAmount);
+            console.log(gbpAmount);
+       
+            var message = "<h2>You have $" + usdAmount + " in US Dollars!</h2>";
+            console.log(message);
+            
+
+            var outputText = document.getElementById("output");
+            outputText.innerHTML = message;
+        }
+        var getButton = document.getElementById("gButton");
+        getButton.addEventListener("click", gbpConverter);
+
+                
+
+        </script>
+        
+        
+    </body>
+
+</html>
+   
+
+   
