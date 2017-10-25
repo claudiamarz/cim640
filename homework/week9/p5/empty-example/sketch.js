@@ -15,6 +15,12 @@ var currentBgImage;
 var hitZoneX = 100;
 var hitZoneY = 200;
 
+var hitZone2X = 350;
+var hitZone2Y = 350;
+
+var hitZone3X = 600;
+var hitZone3Y = 200;
+
 var twinkle
 var sun
 var waterCan
@@ -100,12 +106,21 @@ var wiggleX = map(mouseX, 0, width, -10, 10);
         
        }
     
-    var hitZoneDist = dist(hitZoneX,hitZoneY,mouseX,mouseY);
+    var hitZoneDist2 = dist(hitZone2X,hitZone2Y,mouseX,mouseY);
     console.log("hitZoneDist " + hitZoneDist);
     
-    if(hitZoneDist <= 5){
+    if(hitZoneDist2 <= 5){
         console.log("totally in the zone");
-        image(sun,hitZoneX +400,hitZoneY -300);
+        image(waterCan,200,0);
+        
+       }
+    
+    var hitZoneDist3 = dist(hitZone3X,hitZone3Y,mouseX,mouseY);
+    console.log("hitZoneDist " + hitZoneDist);
+    
+    if(hitZoneDist3 <= 5){
+        console.log("totally in the zone");
+        image(sun,0,0);
         
        }
     
@@ -116,13 +131,18 @@ var wiggleX = map(mouseX, 0, width, -10, 10);
     fill("white")
     ellipse(hitZoneX, hitZoneY, 10, 10);
     
+ //waterCan
+    stroke("black");
+    strokeWeight(1);
+    fill("white")
+    ellipse(hitZone2X, hitZone2Y, 10, 10);
+    
  //sun
     stroke("black");
     strokeWeight(1);
     fill("white")
-    ellipse(hitZoneX +400, hitZoneY -50, 10, 10);
-    
-    
+    ellipse(hitZone3X, hitZone3Y, 10, 10);
+        
     
 
 }
