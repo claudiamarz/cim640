@@ -1,40 +1,55 @@
-var frameArray = [];
-var counter = 0;
+var pics = [];
 
-var interval = 300;
-var prevMillis = 0;
+//var ball = ["football", "basketball", "soccer"];
 
-function setup(){
-    
-    createCanvas(500,500);  
-    
-    for(var i = 0; i < 4; i++){
-        var lString = "assets/thatwasclose" + i + ".jpg"
-        frameArray[i] = loadImage(lString);
-    }
-    
-//    frameArray[0] = loadImage("assets/thatwasclose0.jpg");
-//    frameArray[1] = loadImage("assets/thatwasclose1.jpg");
-//    frameArray[2] = loadImage("assets/thatwasclose2.jpg");
-//    frameArray[3] = loadImage("assets/thatwasclose3.jpg");
-    
+var targetPosX = [100, 300, 500];
+
+var targetPosY = 100;
+
+//var overlayArray = [false, false, false];
+
+function setup() {
+    createCanvas(600, 400);
+    pics[0] = loadImage("assets/football.png");
+
+    pics[1] = loadImage("assets/basketball.png");
+
+    pics[2] = loadImage("assets/soccer.png");
 }
 
+function draw() {
 
-function draw(){
-    //frameRate(1);
-    console.log(millis());
-    image(frameArray[counter],0,0);
-    
-    if(millis() - prevMillis >= interval){
-        prevMillis = millis();
-        counter++;
+    background(255);
+    rectMode(CENTER);
+    imageMode(CENTER);
+
+    textSize(32);
+    text("Find the soccer ball?", 50, 250);
+
+
+    if (mouseX > targetPosX[0] - 100 && mouseX < targetPosX[0] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
+        image(pics[0], targetPosX[0], targetPosY);
+
+    } else {
+        rect(targetPosX[0], 100, 200, 200);
     }
-    
-    
-    if(counter == frameArray.length){
-        counter = 0;
+
+    if (mouseX > targetPosX[1] - 100 && mouseX < targetPosX[1] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
+        image(pics[1], targetPosX[1], targetPosY);
+
+    } else {
+        rect(targetPosX[1], 100, 200, 200);
     }
-    
-    ellipse(mouseX,mouseY,10,10);
+
+    if (mouseX > targetPosX[2] - 100 && mouseX < targetPosX[2] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
+        image(pics[2], targetPosX[2], targetPosY);
+
+    } else {
+        rect(targetPosX[2], 100, 200, 200);
+    }
+
+
+
+
+
 }
