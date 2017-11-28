@@ -1,0 +1,22 @@
+var bubbleX = 200;
+var bubbleY = 200;
+var bubbleSize = 50;
+
+function setup(){
+    createCanvas(400,400);
+
+}
+
+function draw(){
+    background(255);
+    display();
+    move();
+}
+
+function display(){
+    ellipse(bubbleX,bubbleY,bubbleSize,bubbleSize);
+}
+
+function move(){
+    bubbleX++;
+}
