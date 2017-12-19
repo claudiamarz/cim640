@@ -20,7 +20,7 @@ var songSpanish2 = 'assets/cerdo.mp3';
 var songSpanish3 = 'assets/caballo.mp3';
 
 function preload() {
-    bgImage = loadImage('assets/farm2.jpg');
+    bgImage = loadImage('assets/farm.jpg');
 }
 
 function setup() {
@@ -36,10 +36,10 @@ function setup() {
     img3 = loadImage("assets/pig.png");
     img4 = loadImage("assets/horse.png");
 
-    interfaceItems.push(new interface(780,220,103,110, img, loadSound(song)));//rooster
+    interfaceItems.push(new interface(780,235,103,91, img, loadSound(song)));//rooster
     interfaceItems.push(new interface(0,460,439,271, img2, loadSound(song1)));//cow
     interfaceItems.push(new interface(450,580,255,135, img3, loadSound(song2)));//pig
-    interfaceItems.push(new interface(700,490,350,216, img4, loadSound(song3)));//horse
+    interfaceItems.push(new interface(700,490,350,216, img4, loadSound(song3)));//horese
 
     // languageButton = createButton("English")
     // languageButton.position(10, 10);
@@ -49,22 +49,22 @@ function setup() {
     langSelect = createSelect();
     langSelect.position(10, 10);
     langSelect.style('width', '100px');
+    langSelect.style('height', '30px');
     langSelect.option('English');
     langSelect.option('Spanish');
     langSelect.changed(toggleLanguage);
 }
 
-
 function toggleLanguage(){
   var lang = langSelect.value();
   interfaceItems = [];
   if(lang == "Spanish"){
-    interfaceItems.push(new interface(780,220,103,91, img, loadSound(songSpanish)));
+    interfaceItems.push(new interface(780,235,103,91, img, loadSound(songSpanish)));
     interfaceItems.push(new interface(0,460,439,271, img2, loadSound(songSpanish1)));
     interfaceItems.push(new interface(450,580,255,135, img3, loadSound(songSpanish2)));
     interfaceItems.push(new interface(700,490,350,216, img4, loadSound(songSpanish3)));
   }else{
-    interfaceItems.push(new interface(780,220,103,91, img, loadSound(song)));
+    interfaceItems.push(new interface(780,235,103,91, img, loadSound(song)));
     interfaceItems.push(new interface(0,460,439,271, img2, loadSound(song1)));
     interfaceItems.push(new interface(450,580,255,135, img3, loadSound(song2)));
     interfaceItems.push(new interface(700,490,350,216, img4, loadSound(song3)));
@@ -77,7 +77,7 @@ function draw() {
     image(currentBgImage, 0, 0, 1200, 760);
     for(var i = 0; i < interfaceItems.length; i++){
         interfaceItems[i].display();
-
+    }
 
 }
 

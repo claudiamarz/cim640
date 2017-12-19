@@ -9,7 +9,3 @@ I'd like to create a game for children to become familiar with animals and the s
 3. Language Game
 For my third idea, I'd like to create a grid using 16 squares. There will be 8 words in English and 8 words in Spanish or another language. The objective is to match the word in English to its translation in Spanish as fast as you can.
 
-
-# 3 First Code Plan
-
-My final project is going to be an interactive children's learning game. The game will include 5-6 farm animals or jungle animals and will pronounce the name of the animal in English and Spanish when you click on the button with its name on it. I might add a slider in order to pronounce the name of the animal in a third language.   
