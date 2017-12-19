@@ -2,40 +2,18 @@ var interfaceItems = [];
 
 var brushSize = 10;
 
-var imageArray = [];
-
-var soundFile;
-
-var showImage = false;
-
-function preload() {
-
-  imageArray.push(loadImage('assets/play.png'));
-  imageArray.push(loadImage('assets/stop.png'));
-  imageArray.push(loadImage('assets/cow.png'));
-
-
-  soundFile = loadSound('assets/CowMoo.mp3');
-
-
-}
-
-
 function setup(){
   createCanvas(400,400);
 
-  interfaceItems.push(new interface(100,200,50, imageArray[0]));
-  interfaceItems.push(new interface(200,200,50, imageArray[1]));
+  interfaceItems.push(new interface(100,100,50, color(255,0,0)));
 
-
+  interfaceItems.push(new interface(200,100,50, color(0,255,0)));
 }
 
 
 function draw(){
-  background(255);
-  if(showImage == true){
-    image(imageArray[2], 0,0,imageArray[2].width/3,imageArray[2].height/3);
-  }
+  fill(0);
+  ellipse(mouseX,mouseY, brushSize,brushSize);
 
   interfaceItems[0].check();
   interfaceItems[0].display();
@@ -46,30 +24,29 @@ function draw(){
 
 function mousePressed(){
   if(interfaceItems[0].check() == true){
-    soundFile.setVolume(1);
-    soundFile.play();
-    showImage = true;
+    console.log("pressed red button");
+    brushSize++;
   }
 
   if(interfaceItems[1].check() == true){
-    soundFile.stop();
-    showImage = false;
+    brushSize--;
   }
 }
 
 
-function interface(tempX, tempY, tempBoxSize, tempImage){
+function interface(tempX, tempY, tempBoxSize, tempColor){
   this.x  = tempX;
   this.y = tempY;
   this.boxSize = tempBoxSize;
-  this.img = tempImage;
+  this.setFill = tempColor;
   this.overlay = false;
 
   this.display = function(){
-    image(this.img, this.x, this.y, this.boxSize, this.boxSize);
+    fill(this.setFill);
+    rect(this.x, this.y, this.boxSize, this.boxSize);
 
     if(this.overlay == true){
-      fill(255,200);
+      fill(127,200);
       rect(this.x, this.y, this.boxSize, this.boxSize);
     }
   }

@@ -12,4 +12,4 @@ For my third idea, I'd like to create a grid using 16 squares. There will be 8 w
 
 # 3 First Code Plan
 
-My final project is going to be an interactive children's learning game. The game will either include 5-6 farm animals or jungle animals and will pronounce the name of the animal in English and Spanish when you click on the button with its name on it. I might add a slider in order to pronounce the name of the animal in a third language.   
+My final project is going to be an interactive children's learning game. The game will include 5-6 farm animals or jungle animals and will pronounce the name of the animal in English and Spanish when you click on the button with its name on it. I might add a slider in order to pronounce the name of the animal in a third language.   
